@@ -1,0 +1,33 @@
+
+
+<div class="container-fluid">
+  <form [formGroup]="todoForm" (ngSubmit)="addTodo()" class="text-center">
+    <label>
+      <input formControlName="todo" placeholder="Enter a Task">
+      <button type="submit" class="btn btn-success">Add</button>
+    </label>
+  </form>
+</div>
+
+<div class="container-fluid">
+  <table class="table table-light table-bordered table-hover" *ngIf="todos">
+    <thead class="thead-dark">
+      <tr class="text-center">
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col">In progress</th>
+        <th scope="col">Completed</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <TBODY>
+      <tr *ngFor="let todo of todos; let i = index" [formGroup]="todoForm" class="text-center">
+        <th [attr.id]="'status'+todo.id" class="bg-danger" scope="row">{{i+1}}</th>
+        <td [attr.id]="'task'+todo.id">{{todo.whatTodo}}</td>
+        <td><input type="radio"  formControlName="status" value="inProgress" (change)="handleChange(todo)"/></td>
+        <td><input type="radio"  formControlName="status" value="completed" (change)="handleChange(todo)"/></td>
+        <td><button type="button" class="btn" (click)="handleDel(todo)"><img alt="nooo" src="../../assets/trash.svg" width="20" height="20"></button></td>
+      </tr>
+    </TBODY>
+  </table>
+</div>

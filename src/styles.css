@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./styles/bootstrap-4.3.1-dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Titan+One&display=swap');
+
+body{
+  background-color: #daffff;
+}
+
+h1, h4{
+  font-family: 'Titan One', cursive;
+}
+
+table.table-bordered> thead > tr > th{
+  border:1px solid black;
+}
+table.table-bordered > tbody > tr > td{
+  border:1px solid black;
+}
+
+.btn-success{
+  margin-left: 20px;
+}
+
+
