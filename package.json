@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "typescript": "~3.4.5",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot --target=production"
   },
   "private": true,
   "dependencies": {
