@@ -15,7 +15,6 @@ export class TodosComponent implements OnInit {
 
   todoForm = new FormGroup({
     todo: new FormControl(),
-    status: new FormControl('inProgress')
   });
 
   constructor() {
@@ -28,10 +27,7 @@ export class TodosComponent implements OnInit {
     addedTodo.whatTodo = this.todoForm.get('todo').value;
     addedTodo.id = this.count++;
     this.todos.push(addedTodo);
-    this.todoForm.reset({
-      todo: '',
-      status: 'inProgress'
-    });
+    this.todoForm.reset();
   }
   handleChange(todo: Todo): void {
     const radio = document.getElementById('task' + todo.id);
